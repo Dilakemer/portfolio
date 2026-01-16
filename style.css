@@ -570,6 +570,19 @@ a {
 .cert-date {
     font-size: 0.8rem;
     color: var(--text-secondary);
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.cert-desc {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 0.5rem;
 }
 
 /* cert-icon class is removed/deprecated in new layout but kept for safety or legacy */
