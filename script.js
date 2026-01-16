@@ -93,6 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectData = {
         'code-alchemist': {
             title: 'Code Alchemist',
+            images: [
+                'projeler/code_alchemist.png',
+                'projeler/code_alchemist2.png',
+                'projeler/code_alchemist3.png',
+                'projeler/code_alchemist4.png',
+                'projeler/code_alchemist5.png'
+            ],
             content: `
                 <p>Code Alchemist, yazılım geliştirme süreçlerini yapay zeka ile güçlendiren kapsamlı bir asistan platformudur. Geliştiricilerin kod yazma hızını artırmak ve tekrarlayan görevleri otomatize etmek için tasarlanmıştır.</p>
                 <h4>Öne Çıkan Özellikler:</h4>
@@ -107,6 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'smart-doc-rag': {
             title: 'Smart Doc RAG',
+            images: [
+                'projeler/rag.png',
+                'projeler/rag2.png',
+                'projeler/rag3.png',
+                'projeler/rag4.png'
+            ],
             content: `
                 <p>Büyük doküman setleri (PDF, DOCX vb.) üzerinde doğal dil ile soru sormayı sağlayan gelişmiş bir RAG (Retrieval-Augmented Generation) sistemidir. Kullanıcı, dokümanları yükler ve sistem ilgili içeriği bularak mantıklı cevaplar üretir.</p>
                 <h4>Öne Çıkan Özellikler:</h4>
@@ -121,6 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'nlp-sql': {
             title: 'NLP to SQL Chatbot',
+            images: [
+                'projeler/nlp.png',
+                'projeler/nlp2.png',
+                'projeler/nlp3.png'
+            ],
             content: `
                 <p>Teknik bilgisi olmayan kullanıcıların veritabanlarından veri çekebilmesini sağlayan bir chatbot. Kullanıcı doğal dil ile sorusunu yazar (örn: "Geçen ay en çok satan ürün hangisi?") ve sistem bunu otomatik olarak SQL sorgusuna çevirir.</p>
                 <h4>Öne Çıkan Özellikler:</h4>
@@ -140,6 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBody = document.getElementById('modal-body');
     const closeBtn = document.querySelector('.close-modal');
 
+    let modalSliderInterval;
+
     document.querySelectorAll('.project-details-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const projectId = btn.getAttribute('data-id');
@@ -147,9 +167,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data) {
                 modalTitle.textContent = data.title;
-                modalBody.innerHTML = data.content;
+
+                // Construct Modal Content with Slider
+                let sliderHTML = '';
+                if (data.images && data.images.length > 0) {
+                    sliderHTML = `<div class="modal-slider">`;
+                    data.images.forEach((img, index) => {
+                        sliderHTML += `<img src="${img}" class="modal-slide ${index === 0 ? 'active' : ''}">`;
+                    });
+                    sliderHTML += `</div>`;
+                }
+
+                modalBody.innerHTML = sliderHTML + data.content;
                 modal.style.display = 'flex';
-                setTimeout(() => modal.classList.add('show'), 10); // Trigger transition
+                setTimeout(() => modal.classList.add('show'), 10);
+
+                // Start Auto Slider for Modal
+                if (data.images && data.images.length > 1) {
+                    const slides = modalBody.querySelectorAll('.modal-slide');
+                    let currentSlide = 0;
+
+                    if (modalSliderInterval) clearInterval(modalSliderInterval);
+
+                    modalSliderInterval = setInterval(() => {
+                        slides[currentSlide].classList.remove('active');
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        slides[currentSlide].classList.add('active');
+                    }, 3000); // 3 seconds per slide
+                }
             }
         });
     });
@@ -157,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close Modal Functions
     const closeModal = () => {
         modal.classList.remove('show');
+        if (modalSliderInterval) clearInterval(modalSliderInterval); // Stop slider
         setTimeout(() => {
             modal.style.display = 'none';
         }, 300);
