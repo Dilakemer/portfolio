@@ -30,4 +30,4 @@ Sitede aşağıdaki bölümler yer almaktadır:
 *   **İletişim:** Sosyal medya ve GitHub bağlantıları.
 
 ---
-*Geliştirilen bu proje, modern web geliştirme pratikleri ve kullanıcı deneyimi (UX) odaklı tasarım anlayışıyla kodu sıfırdan yazılmıştır.*
+
