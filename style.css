@@ -161,8 +161,8 @@ a {
 
 .image-wrapper {
     position: relative;
-    width: 320px;
-    height: 320px;
+    width: 400px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,6 +207,7 @@ a {
 }
 
 /* Tablet/Mobile Responsive Adjustments for Hero */
+/* Tablet/Mobile Responsive Adjustments for Hero */
 @media (max-width: 992px) {
     .hero-container {
         flex-direction: column-reverse;
@@ -223,8 +224,24 @@ a {
     }
 
     .image-wrapper {
-        width: 250px;
-        height: 250px;
+        width: 350px;
+        height: 350px;
+        margin: 0 auto;
+    }
+
+    .btn-group {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .image-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+
+    .name {
+        font-size: 2.5rem;
     }
 }
 
