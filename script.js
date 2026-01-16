@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar Scroll Glass Effect
     const navbar = document.querySelector('.navbar');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(15, 23, 42, 0.95)';
@@ -40,6 +40,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // Simple entry animation logic could be added here
         // For now, CSS animations or static text works fine
     }
+
+    // Slider Functionality
+    document.querySelectorAll('.slider-container').forEach(slider => {
+        const wrapper = slider.querySelector('.slider-wrapper');
+        const slides = slider.querySelectorAll('.slide');
+        const prevBtn = slider.querySelector('.prev');
+        const nextBtn = slider.querySelector('.next');
+        let currentSlide = 0;
+
+        function updateSlider() {
+            wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+                updateSlider();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+                updateSlider();
+            });
+        }
+    });
 
     // Intersection Observer for Fade-in Animations
     const observerOptions = {
