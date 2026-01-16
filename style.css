@@ -163,22 +163,33 @@ a {
     position: relative;
     width: 320px;
     height: 320px;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    /* Organic shape */
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 6px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
-    animation: float 6s ease-in-out infinite;
-    overflow: hidden;
+    box-shadow: 0 0 50px rgba(99, 102, 241, 0.4);
+    animation: pulseGlow 4s infinite alternate;
 }
 
 .image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    /* Match wrapper shape */
+    border-radius: 50%;
+    border: 4px solid var(--bg-color);
     background: var(--card-bg);
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 60px rgba(99, 102, 241, 0.6);
+    }
 }
 
 @keyframes float {
