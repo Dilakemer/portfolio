@@ -88,4 +88,87 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(section);
     });
+
+    // Modal Functionality
+    const projectData = {
+        'code-alchemist': {
+            title: 'Code Alchemist',
+            content: `
+                <p>Code Alchemist, yazılım geliştirme süreçlerini yapay zeka ile güçlendiren kapsamlı bir asistan platformudur. Geliştiricilerin kod yazma hızını artırmak ve tekrarlayan görevleri otomatize etmek için tasarlanmıştır.</p>
+                <h4>Öne Çıkan Özellikler:</h4>
+                <ul>
+                    <li><strong>Akıllı Kod Tamamlama:</strong> Bağlamı anlayarak kod önerileri sunar.</li>
+                    <li><strong>Proje Yönetimi:</strong> Görev takibi ve süreç optimizasyonu sağlar.</li>
+                    <li><strong>Hata Ayıklama:</strong> Kod hatalarını analiz eder ve çözüm önerir.</li>
+                </ul>
+                <h4>Teknolojiler:</h4>
+                <p>Python (Backend), React (Frontend), LLM Modelleri (OpenAI/Gemini), FastAPI.</p>
+            `
+        },
+        'smart-doc-rag': {
+            title: 'Smart Doc RAG',
+            content: `
+                <p>Büyük doküman setleri (PDF, DOCX vb.) üzerinde doğal dil ile soru sormayı sağlayan gelişmiş bir RAG (Retrieval-Augmented Generation) sistemidir. Kullanıcı, dokümanları yükler ve sistem ilgili içeriği bularak mantıklı cevaplar üretir.</p>
+                <h4>Öne Çıkan Özellikler:</h4>
+                <ul>
+                    <li><strong>Semantik Arama:</strong> Kelime bazlı değil, anlam bazlı arama yapar.</li>
+                    <li><strong>Vektör Veritabanı:</strong> Hızlı erişim için ChromaDB kullanır.</li>
+                    <li><strong>Doküman Analizi:</strong> Karmaşık tabloları ve metinleri işleyebilir.</li>
+                </ul>
+                <h4>Teknolojiler:</h4>
+                <p>Python, LangChain, OpenAI API, ChromaDB, Streamlit (UI).</p>
+            `
+        },
+        'nlp-sql': {
+            title: 'NLP to SQL Chatbot',
+            content: `
+                <p>Teknik bilgisi olmayan kullanıcıların veritabanlarından veri çekebilmesini sağlayan bir chatbot. Kullanıcı doğal dil ile sorusunu yazar (örn: "Geçen ay en çok satan ürün hangisi?") ve sistem bunu otomatik olarak SQL sorgusuna çevirir.</p>
+                <h4>Öne Çıkan Özellikler:</h4>
+                <ul>
+                    <li><strong>Text-to-SQL:</strong> Doğal dili anında SQL sorgusuna dönüştürme.</li>
+                    <li><strong>Güvenli Sorgulama:</strong> Sadece okuma yetkisi ile güvenli veri erişimi.</li>
+                    <li><strong>Şema Analizi:</strong> Veritabanı yapısını otomatik analiz eder.</li>
+                </ul>
+                <h4>Teknolojiler:</h4>
+                <p>Python, OpenAI GPT-4, PostgreSQL, Flask.</p>
+            `
+        }
+    };
+
+    const modal = document.getElementById('project-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const closeBtn = document.querySelector('.close-modal');
+
+    document.querySelectorAll('.project-details-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const projectId = btn.getAttribute('data-id');
+            const data = projectData[projectId];
+
+            if (data) {
+                modalTitle.textContent = data.title;
+                modalBody.innerHTML = data.content;
+                modal.style.display = 'flex';
+                setTimeout(() => modal.classList.add('show'), 10); // Trigger transition
+            }
+        });
+    });
+
+    // Close Modal Functions
+    const closeModal = () => {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+    };
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
 });
