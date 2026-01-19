@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><strong>Hata Ayıklama:</strong> Kod hatalarını analiz eder ve çözüm önerir.</li>
                 </ul>
                 <h4>Teknolojiler:</h4>
-                <p>Python (Backend), React (Frontend), LLM Modelleri (OpenAI/Gemini), FastAPI.</p>
+                <p>Python (Backend), React (Frontend), LLM Modelleri (OpenAI/Gemini/Claude), FastAPI.</p>
             `
         },
         'smart-doc-rag': {
