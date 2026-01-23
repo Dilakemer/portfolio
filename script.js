@@ -91,6 +91,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal Functionality
     const projectData = {
+        'food-rec': {
+            title: 'Food Recommendation System',
+            images: [
+                'projeler/cell_7_output_0.png',
+                'projeler/cell_36_output_0.png',
+                'projeler/cell_17_output_0.png',
+                'projeler/cell_39_output_1.png'
+            ],
+            content: `
+                <p>Veri analizi, doğal dil işleme (NLP) ve derin öğrenme teknikleri kullanılarak geliştirilen kapsamlı bir yemek tarifi öneri sistemi. Kullanıcıların tercihleri ve mevcut malzemelerine göre en uygun tarifleri sunar.</p>
+                <h4>Öne Çıkan Özellikler:</h4>
+                <ul>
+                    <li><strong>İçerik Bazlı Filtreleme:</strong> Malzemelere ve tarif detaylarına göre öneriler.</li>
+                    <li><strong>NLP Analizi:</strong> Tarif metinlerini işleyerek benzerlikleri bulur.</li>
+                    <li><strong>Derin Öğrenme:</strong> Gelişmiş modelleme ile kullanıcı tercihlerini öğrenir.</li>
+                </ul>
+                <h4>Teknolojiler:</h4>
+                <p>Python, Pandas, Scikit-Learn, TensorFlow/Keras, NLTK.</p>
+            `
+        },
         'code-alchemist': {
             title: 'Code Alchemist',
             images: [
