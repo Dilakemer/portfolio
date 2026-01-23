@@ -150,6 +150,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h4>Teknolojiler:</h4>
                 <p>Python, OpenAI GPT-4, PostgreSQL, Flask.</p>
             `
+        },
+        'eda-website': {
+            title: 'EDA WebSite',
+            images: [
+                'projeler/veriyebakıs.png',
+                'projeler/ilk5satır.png',
+                'projeler/eksikdegerler.png',
+                'projeler/korelasyon.png',
+                'projeler/pairplot.png',
+                'projeler/scatter.png',
+                'projeler/vektorizasyon.png',
+                'projeler/kumeleme.png',
+                'projeler/modelegitimsonucları.png'
+            ],
+            content: `
+                <p>Kullanıcıların veri setlerini yükleyip hızlıca analiz yapabildiği, interaktif görselleştirmeler oluşturabildiği bir veri bilimi platformu. Karmaşık kodlama süreçlerine girmeden verilerinizi anlamlandırmanızı sağlar.</p>
+                <h4>Öne Çıkan Özellikler:</h4>
+                <ul>
+                    <li><strong>Hızlı Veri Keşfi:</strong> Yüklenen veri setinin otomatik analizi.</li>
+                    <li><strong>Dinamik Görselleştirme:</strong> İnteraktif grafikler ve özelleştirilebilir raporlar.</li>
+                    <li><strong>Kolay Kullanım:</strong> Sürükle-bırak arayüzü ile kullanıcı dostu deneyim.</li>
+                </ul>
+                <h4>Teknolojiler:</h4>
+                <p>Python, Streamlit, Pandas, Plotly.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://edawebsite.streamlit.app/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary-color); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 0.9rem;">
+                        Canlı Demo <i class="ph ph-arrow-square-out"></i>
+                    </a>
+                </div>
+            `
         }
     };
 
