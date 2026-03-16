@@ -200,6 +200,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                 </div>
             `
+        },
+        'fiyat-takip': {
+            title: 'Fiyat Takip Sistemi',
+            images: [
+                'projeler/fiyat_takip.png',
+                'projeler/fiyat_takip (2).png',
+                'projeler/fiyat_takip (3).png'
+            ],
+            content: `
+                <p>Bu proje, Trendyol uzerindeki urunlerin fiyat gecmisini satici bazli olarak toplayip SQLite veritabanina kaydeden, FastAPI ile JSON olarak sunan ve React panelinde grafik olarak gosteren iki katmanli bir yapidir.</p>
+                <h4>Yapi ve Akis:</h4>
+                <ul>
+                    <li><strong>scraper.py:</strong> Trendyol urun sayfasini headless Chrome ile acarak urun basligi, ana satici ve diger saticilarin fiyatlarini CSS secicilerle toplar. Bu katmanda <strong>Selenium</strong> kullanilmistir.</li>
+                    <li><strong>Kayit Formati:</strong> Veriler veritabanina <strong>Urun Adi [Satici Adi]</strong> formatinda yazilir.</li>
+                    <li><strong>database.py:</strong> Kayitlari urun + satici bazli gruplayarak API katmani icin hazirlar.</li>
+                    <li><strong>api.py:</strong> Sonucu <strong>/api/urunler</strong> uzerinden JSON olarak sunar.</li>
+                    <li><strong>React Arayuzu:</strong> Urun ve satici secimi ile fiyat degisimini cizgi grafik olarak gosterir.</li>
+                </ul>
+                <h4>Teknolojiler:</h4>
+                <p>Python, Selenium, Headless Chrome, SQLite, FastAPI, React.</p>
+            `
         }
     };
 
