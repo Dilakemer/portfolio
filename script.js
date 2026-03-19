@@ -221,6 +221,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h4>Teknolojiler:</h4>
                 <p>Python, Selenium, Headless Chrome, SQLite, FastAPI, React.</p>
             `
+        },
+        'health-scan': {
+            title: 'Health Scan',
+            images: [
+                'projeler/healt_scan1.png',
+                'projeler/health_scan2.png',
+                'projeler/helath_scan3.png',
+                'projeler/healtscan.png'
+            ],
+            content: `
+                <p>Health Scan, gıda etiketlerini analiz eden kural tabanlı bir asistan uygulamasıdır. Ürün fotoğraflarından OCR ile içerik metnini çıkararak kullanıcının sağlık profiline (alerjiler ve kronik rahatsızlıklar) göre risk analizi yapar.</p>
+                <h4>Öne Çıkan Özellikler:</h4>
+                <ul>
+                    <li><strong>OCR Entegrasyonu:</strong> Tesseract.js ile ürün etiketlerinden Türkçe ve İngilizce metin çıkarımı.</li>
+                    <li><strong>Kişiselleştirilmiş Risk Analizi:</strong> Kullanıcı profiline göre hastalık ve alerji farkındalığı ile sonuç üretme.</li>
+                    <li><strong>Açıklanabilir Sonuçlar:</strong> Risk skoru, uyarı nedenleri ve tavsiyelerin şeffaf şekilde sunulması.</li>
+                </ul>
+                <h4>Teknolojiler:</h4>
+                <p>Next.js, Supabase, Tesseract.js, Tailwind CSS.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://health-scan-puce.vercel.app/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary-color); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 0.9rem;">
+                        Canlı Demo <i class="ph ph-arrow-square-out"></i>
+                    </a>
+                </div>
+            `
         }
     };
 
